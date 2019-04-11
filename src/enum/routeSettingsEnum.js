@@ -2,8 +2,8 @@
 const routeSettings = {
     HOME: {
         path: '/',
-        name: 'Home',
-        RouteComponent: 'home/Home',
+        name: 'Container',
+        RouteComponent: 'container/Container',
     },
 };
 

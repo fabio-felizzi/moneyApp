@@ -19,7 +19,8 @@ module.exports = {
         "class-methods-use-this": "off",
         "import/no-unresolved": "off",
         "no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "[_]" }],
-        "jsx-a11y/no-noninteractive-element-interactions": ["warn"]
+        "jsx-a11y/no-noninteractive-element-interactions": ["warn"],
+        "linebreak-style": ["error", "windows"]
     },
     "env": {
         "browser": true,

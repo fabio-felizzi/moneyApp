@@ -10,36 +10,31 @@ const WebpackCleanupPluginConfig = new WebpackCleanupPlugin({
     quiet: true,
 });
 
-module.exports = () => {
-    return (
-        merge(baseConfig, {
-            mode: 'production',
-            optimization: {
-                runtimeChunk: 'single',
-                splitChunks: {
-                    cacheGroups: {
-                        commons: {
-                            test: /[\\/]node_modules[\\/]/,
-                            name: 'vendors',
-                            chunks: 'initial',
-                            enforce: true,
-                        },
-                    },
+module.exports = () => merge(baseConfig, {
+    mode: 'production',
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'initial',
+                    enforce: true,
                 },
-                noEmitOnErrors: true,
-                concatenateModules: true,
-                minimizer: [
-                    new UglifyJsPlugin({
-                        cache: true,
-                        parallel: true,
-                        sourceMap: false,
-                    }),
-                ],
             },
-            plugins: [
-                DefinePluginConfig,
-                WebpackCleanupPluginConfig,
-            ],
-        })
-    );
-};
+        },
+        noEmitOnErrors: true,
+        concatenateModules: true,
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: false,
+            }),
+        ],
+    },
+    plugins: [
+        WebpackCleanupPluginConfig,
+    ],
+});

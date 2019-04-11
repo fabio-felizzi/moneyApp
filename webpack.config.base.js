@@ -27,7 +27,7 @@ module.exports = {
     },
     output: {
         path: path.resolve('_dist'),
-        chunkFilename: '[name].[hash].bundle.min.js',
+        chunkFilename: '[name].[hash].[chunkhash].min.js',
         filename: '[name].[hash].min.js',
         publicPath: '/',
     },

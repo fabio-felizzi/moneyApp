@@ -1,0 +1,51 @@
+{
+    "users": [
+        {
+            "name": "Mr. Ollie Murphree",
+            "dob": "01/07/1970",
+            "employmentStatus": "full-time",
+            "income": 34000,
+            "houseNumber": 700,
+            "postCode": "BS14 9PR"
+        },
+        {
+            "name": "Miss Elizabeth Edmunson",
+            "dob": "29/06/1984",
+            "employmentStatus": "student",
+            "income": 17000,
+            "houseNumber": 177,
+            "postCode": "PH12 8UW"
+        },
+        {
+            "name": "Mr. Trevor Rieck",
+            "dob": "07/09/1990",
+            "employmentStatus": "part-time",
+            "income": 15000,
+            "houseNumber": 343,
+            "postCode": "TS25 2NF"
+        }
+    ],
+    "cards": [
+        {
+            "name": "Student Life",
+            "apr": 18.9,
+            "balanceTransfer": 0,
+            "purchaseOffer": 6,
+            "creditAvailable": 1200
+        },
+        {
+            "name": "Anywhere Card",
+            "apr": 33.9,
+            "balanceTransfer": 0,
+            "purchaseOffer": 0,
+            "creditAvailable": 300
+        },
+        {
+            "name": "Liquid Card",
+            "apr": 33.9,
+            "balanceTransfer": 12,
+            "purchaseOffer": 6,
+            "creditAvailable": 3000
+        }
+    ]
+}
