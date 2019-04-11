@@ -1,0 +1,50 @@
+{
+    "presets": [
+        [
+            "env", {
+            "targets": {
+                "browsers": [
+                    "Chrome >= 52",
+                    "FireFox >= 44",
+                    "Safari >= 7",
+                    "ie >= 11",
+                    "last 4 Edge versions"
+                    ]
+                },
+                "modules": false
+            }
+        ],
+        "react",
+        "stage-1"
+    ],
+    "plugins": [
+        ["transform-runtime", {
+            "polyfill": false,
+            "regenerator": true
+        }],
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "syntax-class-properties",
+        [
+            "react-css-modules",
+            {
+                "exclude": "node_modules",
+                "webpackHotModuleReloading": true
+            }
+        ]
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                ["env", {
+                    "modules": "commonjs"
+                }],
+                "react",
+                "stage-1"
+            ]
+        }
+    },
+    "ignore": [
+        "**/specs/*.*"
+    ]
+}

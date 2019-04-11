@@ -1,0 +1,16 @@
+@import './styles/common/variables.css';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "body";
+  }
+
+  .body { grid-area: body;}
