@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './TitleBlock.css';
+import StyledTitleBlock from 'StyledComponents/StyledTitleBlock';
 
 export const TitleBlock = ({
     title,
@@ -9,19 +9,19 @@ export const TitleBlock = ({
     children,
     backgroundColor,
 }) => (
-    <div styleName={`title-block ${backgroundColor}`}>
-        <div styleName="content">
-            <h1 styleName="title">
+    <StyledTitleBlock className={`title-block ${backgroundColor}`}>
+        <div className="content">
+            <h1 className="title">
                 {title}
             </h1>
             {subtitle && (
-                <h2 styleName="subtitle">
+                <h2 className="subtitle">
                     {subtitle}
                 </h2>
             )}
             {children}
         </div>
-    </div>
+    </StyledTitleBlock>
 );
 
 TitleBlock.defaultProps = {

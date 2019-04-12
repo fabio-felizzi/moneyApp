@@ -6,7 +6,8 @@
             "employmentStatus": "full-time",
             "income": 34000,
             "houseNumber": 700,
-            "postCode": "BS14 9PR"
+            "postCode": "BS14 9PR",
+            "id": 1
         },
         {
             "name": "Miss Elizabeth Edmunson",
@@ -14,7 +15,8 @@
             "employmentStatus": "student",
             "income": 17000,
             "houseNumber": 177,
-            "postCode": "PH12 8UW"
+            "postCode": "PH12 8UW",
+            "id": 2
         },
         {
             "name": "Mr. Trevor Rieck",
@@ -22,7 +24,8 @@
             "employmentStatus": "part-time",
             "income": 15000,
             "houseNumber": 343,
-            "postCode": "TS25 2NF"
+            "postCode": "TS25 2NF",
+            "id": 3
         }
     ],
     "cards": [
@@ -31,21 +34,24 @@
             "apr": 18.9,
             "balanceTransfer": 0,
             "purchaseOffer": 6,
-            "creditAvailable": 1200
+            "creditAvailable": 1200,
+            "eligible": false
         },
         {
             "name": "Anywhere Card",
             "apr": 33.9,
             "balanceTransfer": 0,
             "purchaseOffer": 0,
-            "creditAvailable": 300
+            "creditAvailable": 300,
+            "eligible": true
         },
         {
             "name": "Liquid Card",
             "apr": 33.9,
             "balanceTransfer": 12,
             "purchaseOffer": 6,
-            "creditAvailable": 3000
+            "creditAvailable": 3000,
+            "eligible": false
         }
     ]
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
-
-import './Container.css';
+import StyledDetailsForm from 'StyledComponents/StyledDetailsForm';
+import StyledContainer from 'StyledComponents/StyledContainer';
 
 class Container extends Component {
     constructor(props) {
@@ -11,16 +11,35 @@ class Container extends Component {
         this.state = {
             users,
             cards,
+            selectedUser: {
+                name: '',
+                dob: '',
+                employmentStatus: '',
+                income: '',
+                houseNumber: '',
+                postCode: '',
+                id: '',
+            },
+            submitEnabled: false,
         };
+    }
+
+    submitUser = (name, dob, employmentStatus, income, houseNumber, postCode, id) => {
+        this.setState({
+            selectedUser: {
+                name, dob, employmentStatus, income, houseNumber, postCode, id,
+            },
+            submitEnabled: true,
+        });
     }
 
     generateUsers = () => {
         const { users } = this.state;
 
         const renderedUsers = users.map(({
-            name, dob, employmentStatus, income, houseNumber, postCode,
+            name, dob, employmentStatus, income, houseNumber, postCode, id,
         }) => (
-            <div styleName="user" key={name}>
+            <div className="user" key={id}>
                 <h3>{name}</h3>
                 <ul>
                     <li>{`D.O.B: ${dob}`}</li>
@@ -29,32 +48,41 @@ class Container extends Component {
                     <li>{`House No: ${houseNumber}`}</li>
                     <li>{`Postcode: ${postCode}`}</li>
                 </ul>
+                <button type="button" onClick={() => this.submitUser(name, dob, employmentStatus, income, houseNumber, postCode, id)}>Search for cards</button>
             </div>
         ));
 
         return renderedUsers;
     }
 
-    render() {        
+    submitForm = (e) => {
+        e.preventDefault();
+
+        console.log('submitting');
+    }
+
+    render() {
+        const { selectedUser, submitEnabled } = this.state;
+
         return (
-            <main id="container" styleName="grid-container">
-                <div styleName="page-title">
+            <StyledContainer id="container" className="grid-container">
+                <div className="page-title">
                     <h1>
                     Crazy Cards Application
                     </h1>
                 </div>
-                <div styleName="page-content">
-                    <div styleName="form">
-                        <h1>TESTING LAYOUT</h1>
+                <div className="page-content">
+                    <div className="form">
+                        <StyledDetailsForm formDetails={selectedUser} submitForm={this.submitForm} submitEnabled={submitEnabled} />
                     </div>
-                    <div styleName="users">
+                    <div className="users">
                         {this.generateUsers()}
                     </div>
-                    <div styleName="cards">
+                    <div className="cards">
                         <h1>TESTING LAYOUT</h1>
                     </div>
                 </div>
-            </main>
+            </StyledContainer>
         );
     }
 }

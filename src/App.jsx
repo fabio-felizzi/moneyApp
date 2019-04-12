@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routeSettings from 'Enum/routeSettingsEnum';
 
 import DynamicImportUtil from 'Utils/dynamicImportUtil';
-
-import './App.css';
+import StyledApp from 'StyledComponents/StyledApp';
 
 const appRoutes = Object.values(routeSettings);
 
@@ -20,8 +19,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('src/data/users.json')
-            .then(response => response.json())
+        import('./data/users.json')
             .then((response) => {
                 const { users, cards } = response;
                 this.setState({
@@ -34,8 +32,8 @@ class App extends Component {
     render() {
         const { cards, users } = this.state;
         return (
-            <div styleName="grid-container">
-                <div styleName="body">
+            <StyledApp className="grid-container">
+                <div className="body">
                     <Router>
                         <Route
                             render={({ location }) => (
@@ -53,7 +51,7 @@ class App extends Component {
                         />
                     </Router>
                 </div>
-            </div>
+            </StyledApp>
         );
     }
 }

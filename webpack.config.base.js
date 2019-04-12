@@ -46,7 +46,6 @@ module.exports = {
                 test: /\.css$/,
                 loader: 'css-loader',
                 query: {
-                    modules: true,
                     importLoaders: 1,
                     localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
                 },
@@ -102,6 +101,7 @@ module.exports = {
             Pages: path.resolve(__dirname, 'src/pages/'),
             Sections: path.resolve(__dirname, 'src/sections/'),
             Components: path.resolve(__dirname, 'src/components/'),
+            StyledComponents: path.resolve(__dirname, 'src/styled-components/'),
             Images: path.resolve(__dirname, 'src/images/'),
             Downloads: path.resolve(__dirname, 'src/downloads/'),
             Services: path.resolve(__dirname, 'src/services/'),

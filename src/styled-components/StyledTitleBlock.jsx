@@ -1,20 +1,20 @@
-@import '../../styles/common/variables.css';
+import styled from 'styled-components';
 
-.title-block {
+const StyledTitleBlock = styled.div`
     width: 100%;
     height: auto;
 
     &.black {
-        background-color: $black;
+        background-color: black;
 
         .title,
         .subtitle {
-            color: $white;
+            color: white;
         }
     }
 
     &.white {
-        background-color: $white;
+        background-color: white;
     }
 
     .content {
@@ -26,7 +26,7 @@
         text-align: center;
         padding: 0 10%;
 
-        @media (min-width: $tablet) {
+        @media (min-width: 768px) {
             padding: 0 25%;
         }
     }
@@ -34,10 +34,10 @@
     .title {
         font-size: 24px;
         line-height: 31px;
-        color: $black;
+        color: black;
         margin-bottom: 0;
 
-        @media (min-width: $noteBook) {
+        @media (min-width: 992px) {
            font-size: 42px;
            line-height: 50px;
            margin-bottom: 24px;
@@ -47,12 +47,14 @@
     .subtitle {
         font-size: 16px;
         line-height: 24px;
-        color: $black;
+        color: black;
         margin-top: 10px;
 
-        @media (min-width: $noteBook) {
+        @media (min-width: 992px) {
             font-size: 24px;
             line-height: 32px;
         }
     }
-}
+`;
+
+export default StyledTitleBlock;
