@@ -35,7 +35,7 @@
             "balanceTransfer": 0,
             "purchaseOffer": 6,
             "creditAvailable": 1200,
-            "eligible": false
+            "eligible": "student"
         },
         {
             "name": "Anywhere Card",
@@ -51,7 +51,7 @@
             "balanceTransfer": 12,
             "purchaseOffer": 6,
             "creditAvailable": 3000,
-            "eligible": false
+            "eligible": 16000
         }
     ]
 }

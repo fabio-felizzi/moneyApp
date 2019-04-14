@@ -19,7 +19,6 @@ const StyledContainer = styled.div`
 
       display: grid;
       grid-template-columns: repeat(2, minmax(64px, 1fr));
-      grid-template-rows: repeat(2, 1fr);
 
       .form {
         grid-area: 1 / 1;
@@ -27,26 +26,6 @@ const StyledContainer = styled.div`
 
       .users {
         grid-area: 1 / 2;
-
-        .user {
-          border: 1px solid grey;
-          border-radius: 10px;
-          margin: 20px 0;
-          padding: 20px;
-
-          h3 {
-            margin-top: 0;
-          }
-          ul {
-            list-style-type: none;
-            margin: 0;
-            padding:0;
-
-            li {
-              margin: 10px 0;
-            }
-          }
-        }
       }
 
       .cards {

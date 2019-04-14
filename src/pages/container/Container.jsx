@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import StyledDetailsForm from 'StyledComponents/StyledDetailsForm';
 import StyledContainer from 'StyledComponents/StyledContainer';
+import StyledCreditCard from 'StyledComponents/StyledCreditCard';
+import StyledUserCard from 'StyledComponents/StyledUserCard';
 
 class Container extends Component {
     constructor(props) {
@@ -21,6 +23,7 @@ class Container extends Component {
                 id: '',
             },
             submitEnabled: false,
+            displayCards: false,
         };
     }
 
@@ -33,39 +36,61 @@ class Container extends Component {
         });
     }
 
-    generateUsers = () => {
+    renderUsers = () => {
         const { users } = this.state;
 
         const renderedUsers = users.map(({
             name, dob, employmentStatus, income, houseNumber, postCode, id,
-        }) => (
-            <div className="user" key={id}>
-                <h3>{name}</h3>
-                <ul>
-                    <li>{`D.O.B: ${dob}`}</li>
-                    <li>{`Employment Status: ${employmentStatus}`}</li>
-                    <li>{`Income: ${income}`}</li>
-                    <li>{`House No: ${houseNumber}`}</li>
-                    <li>{`Postcode: ${postCode}`}</li>
-                </ul>
-                <button type="button" onClick={() => this.submitUser(name, dob, employmentStatus, income, houseNumber, postCode, id)}>Search for cards</button>
-            </div>
-        ));
+        }) => <StyledUserCard
+                name={name}
+                dob={dob}
+                employmentStatus={employmentStatus}
+                income={income}
+                houseNumber={houseNumber}
+                postCode={postCode}
+                key={id}
+                id={id}
+                submitUser={this.submitUser}
+                />
+            );
 
         return renderedUsers;
     }
 
-    submitForm = (e) => {
-        e.preventDefault();
+    renderCards = (employmentStatus, income) => {
+        const { cards } = this.state;
+        const { name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible } = cards;
+    }
 
-        console.log('submitting');
+    submitForm = (e) => {        
+        e.preventDefault();
+        this.setState({
+            displayCards: true,
+        });
+    }
+
+    resetForm = () => {
+        this.setState({
+            selectedUser: {
+                name: '',
+                dob: '',
+                employmentStatus: '',
+                income: '',
+                houseNumber: '',
+                postCode: '',
+                id: '',
+            },
+            submitEnabled: false,
+            displayCards: false,
+        })
     }
 
     render() {
-        const { selectedUser, submitEnabled } = this.state;
+        const { selectedUser, submitEnabled, displayCards } = this.state;
+        const { employmentStatus, income } = selectedUser;
 
         return (
-            <StyledContainer id="container" className="grid-container">
+            <StyledContainer className="grid-container">
                 <div className="page-title">
                     <h1>
                     Crazy Cards Application
@@ -73,14 +98,17 @@ class Container extends Component {
                 </div>
                 <div className="page-content">
                     <div className="form">
-                        <StyledDetailsForm formDetails={selectedUser} submitForm={this.submitForm} submitEnabled={submitEnabled} />
+                        <StyledDetailsForm
+                            formDetails={selectedUser}
+                            submitForm={this.submitForm}
+                            submitEnabled={submitEnabled}
+                        />
                     </div>
                     <div className="users">
-                        {this.generateUsers()}
+                        {this.renderUsers()}
                     </div>
-                    <div className="cards">
-                        <h1>TESTING LAYOUT</h1>
-                    </div>
+                    {displayCards && this.renderCards(employmentStatus, income)}
+                    <button type="button" onClick={this.resetForm}>Reset</button>
                 </div>
             </StyledContainer>
         );
