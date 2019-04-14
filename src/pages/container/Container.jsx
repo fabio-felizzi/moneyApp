@@ -41,7 +41,8 @@ class Container extends Component {
 
         const renderedUsers = users.map(({
             name, dob, employmentStatus, income, houseNumber, postCode, id,
-        }) => <StyledUserCard
+        }) => (
+            <StyledUserCard
                 name={name}
                 dob={dob}
                 employmentStatus={employmentStatus}
@@ -51,18 +52,20 @@ class Container extends Component {
                 key={id}
                 id={id}
                 submitUser={this.submitUser}
-                />
-            );
+            />
+        ));
 
         return renderedUsers;
     }
 
     renderCards = (employmentStatus, income) => {
         const { cards } = this.state;
-        const { name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible } = cards;
+        const {
+            name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible,
+        } = cards;
     }
 
-    submitForm = (e) => {        
+    submitForm = (e) => {
         e.preventDefault();
         this.setState({
             displayCards: true,
@@ -82,7 +85,7 @@ class Container extends Component {
             },
             submitEnabled: false,
             displayCards: false,
-        })
+        });
     }
 
     render() {
