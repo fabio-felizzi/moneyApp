@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CreditCard = ({
-    className, name, apr, balanceTransfer, purchaseOffer, creditAvailable, employment, minIncome,
+    className, name, apr, balanceTransfer, purchaseOffer, creditAvailable,
 }) => (
     <div className={`card ${className}`}>
         <h3>{name}</h3>
@@ -15,11 +15,6 @@ const CreditCard = ({
     </div>
 );
 
-CreditCard.defaultProps = {
-    employment: 'default',
-    minIncome: 0,
-}
-
 CreditCard.propTypes = {
     className: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -27,8 +22,6 @@ CreditCard.propTypes = {
     balanceTransfer: PropTypes.number.isRequired,
     purchaseOffer: PropTypes.number.isRequired,
     creditAvailable: PropTypes.number.isRequired,
-    employment: PropTypes.string,
-    minIncome: PropTypes.number,
 };
 
 export default CreditCard;

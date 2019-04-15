@@ -19,7 +19,8 @@ module.exports = {
         "import/no-unresolved": "off",
         "no-unused-vars": ["error", { "ignoreRestSiblings": true, "varsIgnorePattern": "[_]" }],
         "jsx-a11y/no-noninteractive-element-interactions": ["warn"],
-        // "linebreak-style": ["error", "windows"]
+        "linebreak-style": "off",
+        "react/jsx-one-expression-per-line": "off"
     },
     "env": {
         "browser": true,

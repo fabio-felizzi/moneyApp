@@ -36,7 +36,8 @@
             "purchaseOffer": 6,
             "creditAvailable": 1200,
             "employment": "student",
-            "minIncome": 0
+            "minIncome": null,
+            "defaultCard": false
         },
         {
             "name": "Anywhere Card",
@@ -45,7 +46,8 @@
             "purchaseOffer": 0,
             "creditAvailable": 300,
             "employment": null,
-            "minIncome": 0
+            "minIncome": null,
+            "defaultCard": true
         },
         {
             "name": "Liquid Card",
@@ -54,7 +56,8 @@
             "purchaseOffer": 6,
             "creditAvailable": 3000,
             "employment": null,
-            "minIncome": 17000
+            "minIncome": 17000,
+            "defaultCard": false
         }
     ]
 }
