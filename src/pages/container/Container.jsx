@@ -64,7 +64,7 @@ class Container extends Component {
 
         const renderedCards = cards.map((card) => {
             const {
-                name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible,
+                name, apr, balanceTransfer, purchaseOffer, creditAvailable, employment, minIncome,
             } = card;
 
             return (
@@ -74,11 +74,14 @@ class Container extends Component {
                     balanceTransfer={balanceTransfer}
                     purchaseOffer={purchaseOffer}
                     creditAvailable={creditAvailable}
-                    eligible={eligible}
+                    employment={employment}
+                    minIncome={minIncome}
                 />
             );
         }).filter((card) => {
             const { employment, minIncome } = card.props;
+            console.log(card);
+            
 
             return employmentStatus === employment || income >= minIncome;
         });
