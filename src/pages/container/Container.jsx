@@ -60,9 +60,32 @@ class Container extends Component {
 
     renderCards = (employmentStatus, income) => {
         const { cards } = this.state;
-        const {
-            name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible,
-        } = cards;
+
+        const renderedCards = cards.map((card) => {
+            const {
+                name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible,
+            } = card;
+            console.log(card);
+            
+            return (
+                <StyledCreditCard
+                    name={name}
+                    apr={apr}
+                    balanceTransfer={balanceTransfer}
+                    purchaseOffer={purchaseOffer}
+                    creditAvailable={creditAvailable}
+                    eligible={eligible}
+                />
+            );
+        }).filter((card) => {
+            console.log(card.props.eligible, income);
+            return card.props.eligible === employmentStatus || card.props.eligible >= income;
+        });
+
+        console.log(renderedCards);
+
+
+        return renderedCards;
     }
 
     submitForm = (e) => {
