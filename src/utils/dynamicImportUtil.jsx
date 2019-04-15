@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { importComponent } from 'Services/dynamicImportService';
-import TitleBlock from 'Components/title-block/TitleBlock';
+import StyledTitleBlock from 'StyledComponents/StyledTitleBlock';
 
 class DynamicImportUtil extends Component {
     state = {
@@ -25,7 +25,7 @@ class DynamicImportUtil extends Component {
         return LoadedComponent
             ? <LoadedComponent {...this.props} />
             : (
-                <TitleBlock
+                <StyledTitleBlock
                     title="Loading"
                     subtitle=""
                     backgroundColor="white"
