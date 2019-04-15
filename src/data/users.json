@@ -35,7 +35,10 @@
             "balanceTransfer": 0,
             "purchaseOffer": 6,
             "creditAvailable": 1200,
-            "eligible": "student"
+            "eligible": {
+              "employment": "student",
+              "minIncome": 0
+            }
         },
         {
             "name": "Anywhere Card",
@@ -43,7 +46,10 @@
             "balanceTransfer": 0,
             "purchaseOffer": 0,
             "creditAvailable": 300,
-            "eligible": true
+            "eligible": {
+              "employment": "any",
+              "minIncome": 0
+            }
         },
         {
             "name": "Liquid Card",
@@ -51,7 +57,10 @@
             "balanceTransfer": 12,
             "purchaseOffer": 6,
             "creditAvailable": 3000,
-            "eligible": 16000
+            "eligible": {
+              "employment": "any",
+              "minIncome": 17000
+            }
         }
     ]
 }

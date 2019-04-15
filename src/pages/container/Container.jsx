@@ -78,8 +78,11 @@ class Container extends Component {
                 />
             );
         }).filter((card) => {
-            console.log(card.props.eligible, income);
-            return card.props.eligible === employmentStatus || card.props.eligible >= income;
+            const { employment, minIncome } = card.props.eligible;
+            console.log(employmentStatus === employment);
+            console.log(income >= minIncome);
+
+            return income >= minIncome;
         });
 
         console.log(renderedCards);
