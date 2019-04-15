@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const CreditCard = ({
     className, name, apr, balanceTransfer, purchaseOffer, creditAvailable,
@@ -13,5 +14,14 @@ const CreditCard = ({
         </ul>
     </div>
 );
+
+CreditCard.propTypes = {
+    className: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    apr: PropTypes.number.isRequired,
+    balanceTransfer: PropTypes.number.isRequired,
+    purchaseOffer: PropTypes.number.isRequired,
+    creditAvailable: PropTypes.number.isRequired,
+};
 
 export default CreditCard;

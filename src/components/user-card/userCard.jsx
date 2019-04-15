@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserCard = ({
     name, dob, employmentStatus, income, houseNumber, postCode, submitUser, className, id,
@@ -15,5 +16,17 @@ const UserCard = ({
         <button type="button" onClick={() => submitUser(name, dob, employmentStatus, income, houseNumber, postCode, id)}>Search for cards</button>
     </div>
 );
+
+UserCard.propTypes = {
+    className: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    dob: PropTypes.string.isRequired,
+    employmentStatus: PropTypes.string.isRequired,
+    income: PropTypes.number.isRequired,
+    houseNumber: PropTypes.number.isRequired,
+    postCode: PropTypes.string.isRequired,
+    submitUser: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired,
+};
 
 export default UserCard;

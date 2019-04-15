@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import StyledDetailsForm from 'StyledComponents/StyledDetailsForm';
 import StyledContainer from 'StyledComponents/StyledContainer';
 import StyledCreditCard from 'StyledComponents/StyledCreditCard';
@@ -65,8 +66,7 @@ class Container extends Component {
             const {
                 name, apr, balanceTransfer, purchaseOffer, creditAvailable, eligible,
             } = card;
-            console.log(card);
-            
+
             return (
                 <StyledCreditCard
                     name={name}
@@ -78,15 +78,10 @@ class Container extends Component {
                 />
             );
         }).filter((card) => {
-            const { employment, minIncome } = card.props.eligible;
-            console.log(employmentStatus === employment);
-            console.log(income >= minIncome);
+            const { employment, minIncome } = card.props;
 
-            return income >= minIncome;
+            return employmentStatus === employment || income >= minIncome;
         });
-
-        console.log(renderedCards);
-
 
         return renderedCards;
     }
@@ -143,5 +138,14 @@ class Container extends Component {
         );
     }
 }
+
+Container.propTypes = {
+    users: PropTypes.arrayOf(
+        PropTypes.object,
+    ).isRequired,
+    cards: PropTypes.arrayOf(
+        PropTypes.object,
+    ).isRequired,
+};
 
 export default Container;

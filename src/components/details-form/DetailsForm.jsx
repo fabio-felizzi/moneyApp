@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const DetailsForm = ({
     className, formDetails, submitForm, submitEnabled,
@@ -10,39 +11,82 @@ const DetailsForm = ({
         income,
         houseNumber,
         postCode,
-        id,
     } = formDetails;
     return (
         <Fragment>
             <form className={`${className} details-form`}>
                 <div>
-                    <label>Name</label>
-                    <input type="text" name="name" value={name} placeholder="Name" />
+                    <label htmlFor="name">
+                    Name
+                        <input type="text" name="name" value={name} placeholder="Name" />
+                    </label>
                 </div>
                 <div>
-                    <label>Date of Birth</label>
-                    <input type="text" name="name" value={dob} placeholder="Date of Birth" />
+                    <label htmlFor="dob">
+                        Date of Birth
+                        <input type="text" name="dob" value={dob} placeholder="Date of Birth" />
+                    </label>
                 </div>
                 <div>
-                    <label>Employment Status</label>
-                    <input type="text" name="name" value={employmentStatus} placeholder="Employment Status" />
+                    <label htmlFor="employment">
+                        Employment Status
+                        <input type="text" name="employment" value={employmentStatus} placeholder="Employment Status" />
+                    </label>
                 </div>
                 <div>
-                    <label>Income</label>
-                    <input type="text" name="name" value={income} placeholder="Income" />
+                    <label htmlFor="income">
+                        Income
+                        <input type="text" name="income" value={income} placeholder="Income" />
+                    </label>
                 </div>
                 <div>
-                    <label>House No</label>
-                    <input type="text" name="name" value={houseNumber} placeholder="House No" />
+                    <label htmlFor="houseNo">
+                        House No
+                        <input type="text" name="houseNo" value={houseNumber} placeholder="House No" />
+                    </label>
                 </div>
                 <div>
-                    <label>Postcode</label>
-                    <input type="text" name="name" value={postCode} placeholder="Postcode" />
+                    <label htmlFor="postcode">
+                        Postcode
+                        <input type="text" name="postcode" value={postCode} placeholder="Postcode" />
+                    </label>
                 </div>
                 <button disabled={submitEnabled === false} type="submit" onClick={submitForm}>Show me eligible cards</button>
             </form>
         </Fragment>
     );
+};
+
+DetailsForm.propTypes = {
+    className: PropTypes.string.isRequired,
+    formDetails: PropTypes.shape({
+        name: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        dob: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        employmentStatus: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        income: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        houseNumber: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        postCode: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+    }).isRequired,
+    submitForm: PropTypes.func.isRequired,
+    submitEnabled: PropTypes.bool.isRequired,
 };
 
 export default DetailsForm;
