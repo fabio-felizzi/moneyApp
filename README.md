@@ -1,6 +1,6 @@
-# Blank Template for React builds
+# Crazy Cards Application
 
-Lightweight starter project for React, uses:
+Uses:
 
 - Styled Components
 - Yarn
