@@ -9,7 +9,7 @@ const componentProps = {
 
 const componentShallow = shallow(<TitleBlock {...componentProps} />);
 
-describe('Button component', () => {
+describe('TitleBlock component', () => {
     describe('Component Shapshot', () => {
         test('should match stored snapshot', () => {
             expect(componentShallow).toMatchSnapshot();

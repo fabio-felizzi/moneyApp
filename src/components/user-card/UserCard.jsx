@@ -7,11 +7,11 @@ const UserCard = ({
     <div className={`user ${className}`}>
         <h3>{name}</h3>
         <ul>
-            <li>{`D.O.B: ${dob}`}</li>
-            <li>{`Employment Status: ${employmentStatus}`}</li>
-            <li>{`Income: ${income}`}</li>
-            <li>{`House No: ${houseNumber}`}</li>
-            <li>{`Postcode: ${postCode}`}</li>
+            <li id="dob">{`D.O.B: ${dob}`}</li>
+            <li id="status">{`Employment Status: ${employmentStatus}`}</li>
+            <li id="income">{`Income: ${income}`}</li>
+            <li id="houseNo">{`House No: ${houseNumber}`}</li>
+            <li id="postCode">{`Postcode: ${postCode}`}</li>
         </ul>
         <button type="button" onClick={() => submitUser(name, dob, employmentStatus, income, houseNumber, postCode, id)}>Search for cards</button>
     </div>

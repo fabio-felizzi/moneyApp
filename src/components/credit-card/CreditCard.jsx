@@ -7,10 +7,10 @@ const CreditCard = ({
     <div className={`card ${className}`}>
         <h3>{name}</h3>
         <ul>
-            <li>{`APR: ${apr}%`}</li>
-            <li>{`Balance Transfer Offer Duration: ${balanceTransfer} Months`}</li>
-            <li>{`Purchase Offer Duration: ${purchaseOffer} Months`}</li>
-            <li>{`Credit Available: £${creditAvailable}`}</li>
+            <li id="apr">{`APR: ${apr}%`}</li>
+            <li id="balance">{`Balance Transfer Offer Duration: ${balanceTransfer} Months`}</li>
+            <li id="purchase">{`Purchase Offer Duration: ${purchaseOffer} Months`}</li>
+            <li id="credit">{`Credit Available: £${creditAvailable}`}</li>
         </ul>
     </div>
 );

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Component Shapshot should match stored snapshot 1`] = `
+<div
+  className="card credit-card"
+>
+  <h3>
+    test-card
+  </h3>
+  <ul>
+    <li
+      id="apr"
+    >
+      APR: 25%
+    </li>
+    <li
+      id="balance"
+    >
+      Balance Transfer Offer Duration: 6 Months
+    </li>
+    <li
+      id="purchase"
+    >
+      Purchase Offer Duration: 6 Months
+    </li>
+    <li
+      id="credit"
+    >
+      Credit Available: £5000
+    </li>
+  </ul>
+</div>
+`;
