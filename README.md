@@ -2,7 +2,7 @@
 
 Lightweight starter project for React, uses:
 
-- CSS Modules (with a few sass like tweaks, e.g variables, nesting, etc)
+- Styled Components
 - Yarn
 - Webpack 4
 - Node 10
@@ -27,3 +27,6 @@ yarn install
 `yarn build` - bundles your project ready for production
 `yarn test` - runs your tests
 `lint-js` - runs Eslint across the whole project
+
+```
+Project is served at `localhost:8080`
