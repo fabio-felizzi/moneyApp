@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsForm component Component Shapshot should match stored snapshot 1`] = `
+<form
+  className="test-form details-form"
+>
+  <div>
+    <label
+      htmlFor="name"
+    >
+      Name
+      <input
+        id="name"
+        name="name"
+        placeholder="Name"
+        type="text"
+        value="test-name"
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      htmlFor="dob"
+    >
+      Date of Birth
+      <input
+        id="dob"
+        name="dob"
+        placeholder="Date of Birth"
+        type="text"
+        value="12/12/12"
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      htmlFor="employment"
+    >
+      Employment Status
+      <input
+        id="employment"
+        name="employment"
+        placeholder="Employment Status"
+        type="text"
+        value="full-time"
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      htmlFor="income"
+    >
+      Income
+      <input
+        id="income"
+        name="income"
+        placeholder="Income"
+        type="text"
+        value={50000}
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      htmlFor="houseNo"
+    >
+      House No
+      <input
+        id="houseNo"
+        name="houseNo"
+        placeholder="House No"
+        type="text"
+        value={123}
+      />
+    </label>
+  </div>
+  <div>
+    <label
+      htmlFor="postcode"
+    >
+      Postcode
+      <input
+        id="postcode"
+        name="postcode"
+        placeholder="Postcode"
+        type="text"
+        value="ABC 123"
+      />
+    </label>
+  </div>
+  <button
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Show me eligible cards
+  </button>
+</form>
+`;

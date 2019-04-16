@@ -13,7 +13,7 @@ const componentProps = {
 
 const componentShallow = shallow(<CreditCard {...componentProps} />);
 
-describe('Button component', () => {
+describe('CreditCard component', () => {
     describe('Component Shapshot', () => {
         test('should match stored snapshot', () => {
             expect(componentShallow).toMatchSnapshot();
