@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component Component Shapshot should match stored snapshot 1`] = `
+exports[`TitleBlock component Component Shapshot should match stored snapshot 1`] = `
 <div
   className="title-block white"
 >
